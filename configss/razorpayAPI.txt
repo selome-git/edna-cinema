@@ -1,0 +1,6 @@
+key_id	key_secret
+rzp_test_2NUSRXWFy5KX0Q	fRhF7ZMhY3tnkwrt34FRiflw
+
+
+card number  demo
+4111 1111 4555 1142
