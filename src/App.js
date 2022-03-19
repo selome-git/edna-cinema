@@ -1,24 +1,32 @@
 import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Signup from './pages/signup';
+import Signup from './users/customer/signup';
 import React,{useState}from "react";
-import { Home } from './pages/home';
-import { Homepage } from './components/home';
-import { Dashboard } from './components/dashboard';
-import { Userprofile } from './components/user_profile';
-import { Booking } from './components/booking';
-import { Ticketbookingform } from './pages/ticket_booking_form';
-import { Bookingform } from './pages/booking_form';
-import { Movieupload } from './admin/movie_upload';
-import { Feedback } from './pages/feedback_page';
-import { MovieDetails } from './pages/movie_details';
-import { Successresponse } from './response/success_response';
-import { Adminpage } from './admin/admin_page';
-import { Retrievefeedback } from './admin/retrieve_feedback';
-import { Adminprofile } from './admin/admin_profile';
-import { AdminBooking } from './admin/admin_booking';
+import { Home } from './users/customer/homepage';
+import { Homepage } from './modulee/home';
+import { Dashboard } from './modulee/dashboard';
+import { Userprofile } from './modulee/user_profile';
+import { Booking } from './modulee/booking';
+import { Ticketbookingform } from './users/customer/book_ticket';
+import { Bookingform } from './users/customer/fill_booking_form';
+import { Movieupload } from './users/admin/post_movie';
+import { Feedback } from './users/customer/give_feedback';
+import { MovieDetails } from './users/customer/view_movie_detail';
+import { Successresponse } from './post_booking/confirmation';
+import { Adminpage } from './users/admin/page_admin';
+import { Retrievefeedback } from './users/admin/retrieve_feedback';
+import { Adminprofile } from './users/admin/profile_admin';
+import { AdminBooking } from './users/admin/retrieve_booking_admin';
+import { ShowMovie } from './users/admin/showmovie_admin';
 import {lightTheme,darkTheme,GlobalStyles} from "./themes/themes.js";
-import styled,{ThemeProvider}from "styled-components";
+import styled,{ThemeProvider} from 'styled-components';
+import { TicketerPage } from './users/ticketer/ticketer_page';
+import { BookingformTicketer } from './users/ticketer/booking_form';
+import { MovieuploadTicketer } from './users/ticketer/ticketer_movie_upload';
+import { TicketerBookingTicketer } from './users/ticketer/ticketer_booking';
+import { TicketerProfile } from './users/ticketer/ticketer-profile';
+import { DashboardTicketer } from './users/ticketer/ticketer_dashboard';
+import { RetrievefeedbackTicketer } from './users/ticketer/ticketer_feedback';
 
 const StyledApp = styled.div``;
 
@@ -68,6 +76,31 @@ function App() {
           </Route>
           <Route exact path="/adminpage">
             <Adminpage />
+          </Route>
+          <Route exact path="/ticketerpage">
+            <TicketerPage />
+          </Route>
+          <Route exact path="/ticketerbooking">
+            <BookingformTicketer />
+          </Route>
+          <Route exact path="/movieuploadticketer">
+            <MovieuploadTicketer/>
+          </Route>
+          <Route exact path="/ticketbookticketer">
+            <TicketerBookingTicketer/>
+          </Route>
+          <Route exact path="/ticketerprofile">
+            <TicketerProfile/>
+          </Route>
+          <Route exact path="/ticketerdashboard">
+            <DashboardTicketer/>
+          </Route>
+          <Route exact path="/retrievefeedbackticketer">
+            <RetrievefeedbackTicketer/>
+          </Route>
+          
+          <Route exact path="/showmovie">
+            <ShowMovie />
           </Route>
           <Route exact path="/retrievefeedback">
             <Retrievefeedback />

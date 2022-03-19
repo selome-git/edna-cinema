@@ -11,6 +11,11 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
+  background: url("./imgAssets/mainBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+
   height: 100vh;
   margin: -20px 0 50px;
 }
@@ -22,6 +27,13 @@ h1 {
 
 h2 {
   text-align: center;
+}
+h3{
+  font-family: 'Segoe UI';
+  color: white;
+  font-weight: lighter;
+  font-size:50px;
+  margin: 0;
 }
 
 p {
@@ -45,8 +57,8 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #19a391;
-  background-color: #19a391;
+  border: 1px solid #000;
+  
   color: #000000;
   font-size: 12px;
   font-weight: bold;
@@ -67,6 +79,8 @@ button:focus {
 button.ghost {
   background-color: transparent;
   border-color: #ffffff;
+  color: white;
+  
 }
 
 form {
@@ -95,9 +109,17 @@ input {
   position: relative;
   overflow: hidden;
   width: 768px;
-  max-width: 100%;
-  min-height: 480px;
+  max-width: 60%;
+  min-height: 600px;
+  min-width: 1000px;
+
 }
+.card{
+  
+  margin-left: 10%;
+  margin-right: 0%;
+}
+
 
 .form-container {
   position: absolute;
@@ -161,12 +183,12 @@ input {
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #19a391, #ff416c);
-  background: linear-gradient(to right, #19a391, #ff416c);
+  background: -webkit-linear-gradient(to right, #4a5352, #bd3050af);
+  background: linear-gradient(to right, #4a5352, #bd3050af);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  color: #ffffff;
+  color: #ffffff;/*color of texts*/
   position: relative;
   left: -100%;
   height: 100%;
@@ -211,20 +233,6 @@ input {
   transform: translateX(20%);
 }
 
-.social-container {
-  margin: 20px 0;
-}
-
-.social-container a {
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
-}
 
 footer {
   background-color: #222;

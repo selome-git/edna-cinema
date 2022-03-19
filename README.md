@@ -1,1 +1,1 @@
-# Movie-Ticket-Booking-App---React
+# EdnaCinema wesite developed using react.js,node.js,firebase, Enjoy:)
