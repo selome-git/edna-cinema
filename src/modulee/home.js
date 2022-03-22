@@ -26,7 +26,7 @@ export const Homepage = () => {
         console.log(moviedata);
     }, [])
     return (
-        <div className="wrapper ">
+        <div className="wrapper " >
             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
             <div className="sidebar" data-color="white" data-background-color="black" data-image="../../public/assets/img/sidebar-1.jpg">
                 <div className="logo"><p className="simple-text logo-normal">

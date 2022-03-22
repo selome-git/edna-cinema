@@ -15,7 +15,7 @@ export const Signup = () => {
 
   const history = useHistory();
   const signUp = () => {
-    var container = document.getElementById('container');
+    var container = document.getElementById('contjainer');
     container.classList.add("right-panel-active");
   };
   const signIn = () => {
@@ -170,13 +170,15 @@ export const Signup = () => {
             <button  onClick={handleSubmit}>Sign Up</button>
           </form>
         </div>
+        
         <div class="form-container sign-in-container">
           <form>
             <h1>Sign in</h1>
+            
            <input type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="Email" />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setpassword(e.target.value)} />
-            <input type="checkbox" style={{ marginLeft: "-66%", width: "-webkit-fill-available" }} value={admin} onChange={(e) => setadmin(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Admin</a>
-            <input type="checkbox" style={{ marginLeft: "-66%", width: "-webkit-fill-available" }} value={ticketer} onChange={(e) => setticketer(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Ticketer</a>
+            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={admin} onChange={(e) => setadmin(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Admin</a>
+            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={ticketer} onChange={(e) => setticketer(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Ticketer</a>
             <button onClick={handleLogin}>Sign In</button>
           </form>
         </div>

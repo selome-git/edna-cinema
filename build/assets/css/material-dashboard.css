@@ -1154,6 +1154,7 @@ pre code {
 
 .col-4 {
   flex: 0 0 33.333333%;
+  
 }
 
 .col-5 {
@@ -4800,6 +4801,8 @@ tbody.collapse.show {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  width: 10px;
+  height: 5px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -15188,8 +15191,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   height: calc(100vh - 75px);
   overflow: auto;
   width: 260px;
-  z-index: 4;
+  z-index: 4; 
   padding-bottom: 30px;
+  background-color:#333;
 }
 
 .sidebar .sidebar-wrapper .dropdown .dropdown-backdrop {

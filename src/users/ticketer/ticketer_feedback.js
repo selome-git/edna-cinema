@@ -28,7 +28,7 @@ export const RetrievefeedbackTicketer = () => {
                     Edna Cinema</h2></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        <li className="nav-item">
+                    <li className="nav-item  ">
                             <Link to={{ pathname: "/ticketerpage", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">home</i>
                                 <p>Home</p>
@@ -41,7 +41,7 @@ export const RetrievefeedbackTicketer = () => {
                             </Link>
                         </li>
                         <li className="nav-item ">
-                            <Link to={{ pathname: "/adminbooking", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
+                            <Link to={{ pathname: "/ticketerbooking", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">content_paste</i>
                                 <p>Retrieve Bookings</p>
                             </Link>
@@ -53,12 +53,12 @@ export const RetrievefeedbackTicketer = () => {
                             </Link>
                         </li>
                         <li className="nav-item ">
-                            <Link to={{ pathname: "/adminprofile", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
+                            <Link to={{ pathname: "/ticketerprofile", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">person</i>
                                 <p>User Profile</p>
                             </Link>
                         </li>
-                        <li className="nav-item active">
+                        <li className="nav-item active ">
                             <Link to={{ pathname: "/retrievefeedbackticketer", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link" >
                                 <i className="material-icons">notifications</i>
                                 <p>Retrieve Feedback</p>
@@ -70,6 +70,7 @@ export const RetrievefeedbackTicketer = () => {
                                 <p>Logout</p>
                             </Link>
                         </li>
+                    
                     </ul>
                 </div>
             </div>

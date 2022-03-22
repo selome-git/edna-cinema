@@ -117,6 +117,7 @@ export const MovieuploadTicketer = () => {
 
                     </div>
                 </nav>
+                <div>
                 <div className="main-panel">
                     <div class="form-container sign-in-container" style={{ height: 'auto', left: '0', width: 'max-content', zIndex: 2, marginLeft: '33%', marginTop: '9%' }}>
                         <form className="upload-form" style={{ background: '#f6f5f7', marginLeft: "-50%", marginTop: "inherit" }}>
@@ -135,7 +136,7 @@ export const MovieuploadTicketer = () => {
                             <input type="button" style={{ background: "#ff4b2b", color: "white" }} value="Upload Movie" onClick={movieUpload} />
                         </form>
                     </div>
-                </div>
+                </div></div>
             </div>
         </div>
     )

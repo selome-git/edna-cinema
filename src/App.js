@@ -27,15 +27,16 @@ import { TicketerBookingTicketer } from './users/ticketer/ticketer_booking';
 import { TicketerProfile } from './users/ticketer/ticketer-profile';
 import { DashboardTicketer } from './users/ticketer/ticketer_dashboard';
 import { RetrievefeedbackTicketer } from './users/ticketer/ticketer_feedback';
-
+ 
 const StyledApp = styled.div``;
 
 function App() {
 
   const [theme,setTheme]=useState("dark");
-
   return (
+    
     <div>
+     
       <Router>
         <Switch>
           <Route exact path="/">

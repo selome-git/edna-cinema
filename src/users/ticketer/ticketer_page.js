@@ -1,6 +1,8 @@
+import { HorizontalSplit } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import fire from '../../firebasefile/firebase';
+
 
 
 export const TicketerPage = () => {
@@ -12,6 +14,7 @@ export const TicketerPage = () => {
     const password = location.state.password;
     const mobile = location.state.mobile;
     const [moviedata, setmoviedata] = useState([]);
+    
 
     useEffect(() => {
         fire.firestore().collection("currentmovies").get().then((snapshot) => {
@@ -25,12 +28,13 @@ export const TicketerPage = () => {
         console.log(moviedata);
     }, [])
     return (
-        <div className="wrapper ">
+        <div className="wrapper">
             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-            <div className="sidebar" data-color="black" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
+            <div className="sidebar" data-color="white" data-background-color='blue'>
                 <div className="logo"><h2>
                     Edna Cinema</h2>
                 </div>
+                  
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="nav-item active  ">
@@ -98,18 +102,28 @@ export const TicketerPage = () => {
                     {
                         moviedata.map((data, index) => {
                             //console.log(data.image);
-                            return <div className="col-4" key={index} style={{ marginLeft: "230px", marginRight: "auto" }}>
+                            return <div>
+                            <div className="col-4" key={index} style={{ marginLeft: "230px", marginRight: "auto"}}>
                                 
-                                <div className="card">
-
-                                    <div className="card-img-top img-fluid">
-                                        <img src={data.data.image} style={{ width: '10rem', height: '15rem'}} />
+                                <div className="card" style={{backgroundColor:'#222',display:'flex',width:'100%',height:'70%'}}>
+                                <h1>{data.data.moviename}</h1>
+                                    <div class='moviecard'>
+                                        <div class='movieimg'>
+                                    <div className="card-img-top img-fluid" style={{backgroundColor: "black",borderRadius:"100px",boxShadow:"0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",width:'100%',height:'100%'}}>
+                                    
+                                        <img src={data.data.image} style={{ width:"100%", height:"100%",position:"relative", borderRadius:"100px"}} />
+                                        </div>
+                                    </div> 
+                                    <div class='moviedes'>
+                                    <h3><u><i>Movies' Description</i></u><br></br>{data.data.description}</h3>
                                     </div>
-                                    <button onClick={() => history.push({ pathname: "/details", state: { viedourl: data.data.viedourl, moviename: data.data.moviename, description: data.data.description, actorname: data.data.actorname, directorname: data.data.directorname, releasedate: data.data.releasedate, outdate: data.data.outdate } })}>View Details</button>
-                                    <button onClick={() => history.push({ pathname: "/bookingform", state: { releasedate: data.data.releasedate, outdate: data.data.outdate, movieimage: data.data.image, moviename: data.data.moviename, ticketcost: data.data.ticketcost, profile: profile, name: name, email: email, password: password, mobile: mobile } })}>Book Now</button>
-                                    <button onClick={() => { fire.firestore().collection("currentmovies").where("moviename", "==", data.data.moviename).get().then((doc) => doc.docs[0].ref.delete()) }}>Delete</button>
-                                </div>
-                            </div>
+                                    <div class='moviebook'>
+                                    <button onClick={() => history.push({ pathname: "/details", state: { viedourl: data.data.viedourl, moviename: data.data.moviename, description: data.data.description, actorname: data.data.actorname, directorname: data.data.directorname, releasedate: data.data.releasedate, outdate: data.data.outdate } })}>More details</button>
+                                    <button onClick={() => history.push({ pathname: "/bookingform", state: { releasedate: data.data.releasedate, outdate: data.data.outdate, movieimage: data.data.image, moviename: data.data.moviename, ticketcost: data.data.ticketcost, profile: profile, name: name, email: email, password: password, mobile: mobile } })}>Get ticket</button>
+                                    <button onClick={() => { fire.firestore().collection("currentmovies").where("moviename", "==", data.data.moviename).get().then((doc) => doc.docs[0].ref.delete()) }}>Remove</button>
+                                    <br></br></div>
+                                   </div></div>
+                            </div></div>
                         })
 
                     }
