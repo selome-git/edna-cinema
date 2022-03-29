@@ -2,12 +2,14 @@
  
  var firebaseConfig = {
     
-        apiKey: "AIzaSyC_djjugZzqcsgePCEyx5R13Tg4f-3kr18",
-        authDomain: "ednacinema-51f4f.firebaseapp.com",
-        projectId: "ednacinema-51f4f",
-        storageBucket: "ednacinema-51f4f.appspot.com",
-        messagingSenderId: "951517034246",
-        appId: "1:951517034246:web:ff8d2e611f5b89a53a9087"
+    apiKey: "AIzaSyBseWV1tGxgmnNt-yTUeHclUtlkGVLhtGI",
+    authDomain: "edna-cinema-19b62.firebaseapp.com",
+    projectId: "edna-cinema-19b62",
+    storageBucket: "edna-cinema-19b62.appspot.com",
+    messagingSenderId: "689379168539",
+    appId: "1:689379168539:web:cb50c0b4bd52bebca983be",
+    measurementId: "G-PE81VK02WD"
+  
       };
   // Initialize Firebase
    var fire = firebase.initializeApp(firebaseConfig);
