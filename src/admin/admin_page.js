@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import fire from '../files/firebase';
 
-
 export const Adminpage = () => {
     const history = useHistory();
     const location = useLocation();
