@@ -14,11 +14,11 @@ export const Userprofile = () => {
 
     return (
         <div>
-            <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-            <div className="sidebar" data-color="white" data-background-color="black" data-image="../../public/assets/img/sidebar-1.jpg">
-                <div className="logo"><p className="simple-text logo-normal">
-                    Edna Cinema
-                </p></div>
+             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+            <div className="sidebar" data-color="white" data-background-color="black" >
+                <div className="logo"><h2>
+                    Edna Cinema</h2>
+                </div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="nav-item">
@@ -33,16 +33,11 @@ export const Userprofile = () => {
                                 <p>Dashboard</p>
                             </Link>
                         </li>
-                        <li className="nav-item ">
-                            <Link to={{ pathname: "/bookings", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
-                                <i className="material-icons">content_paste</i>
-                                <p>Bookings</p>
-                            </Link>
-                        </li>
+                      
                         <li className="nav-item active">
                             <Link to={{ pathname: "/userprofile", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">person</i>
-                                <p>User Profile</p>
+                                <p style={{color:'black'}}>User Profile</p>
                             </Link>
                         </li>
                         <li className="nav-item ">
@@ -61,7 +56,7 @@ export const Userprofile = () => {
                 </div>
             </div>
             <div className="main-panel">
-                <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                     <div class="container-fluid">
                         <div class="navbar-wrapper">
                         </div>
@@ -75,16 +70,17 @@ export const Userprofile = () => {
                     </div>
                 </nav>
 
-                <div className="profile" style={{ fontFamily: 'sans-serif', textAlign: 'center', maxWidth: '350px', boxShadow: '0 0 10px rgba(0,0,0,0.2)', padding: '100px' }}>
-                    <img src={profile} alt="Profile Image" className="profile__image" style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', margin: '0 auto 20px auto', display: 'block', marginTop: '-8%' }} />
-                    <div className="profile__name" style={{ fontSize: '1.2em', fontWeight: 'bold' }}>{name}</div>
+                <div  style={{ fontFamily: 'sans-serif', textAlign: 'center', minWidth: '350px', boxShadow: '0 0 10px rgba(0,0,0,0.2)', padding: '100px',display:'flex',left:'100px',top:'90px' }}>
+                    <h2>Your <br></br> profile<br></br> info</h2>
+                    <img src={profile} alt="Profile Image" className="profile__image" style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', margin: 'auto 20px auto', display: 'block', marginTop: '-1%',marginLeft:'30px' }} />
+                    <div className="profile__name" style={{ fontSize: '1.2em', fontWeight: 'bold',marginLeft:'20px' }}><i className="material-icons">person</i><h3>Name:</h3>{name}</div>
                     <br />
-                    <div className="profile__title" style={{ marginBottom: '20px' }}>{email}</div>
+                    <div className="profile__title" style={{ marginBottom: '20px',marginRight:'30px',marginLeft:'50px' }}><i className="material-icons">email</i><h3>E-mail:</h3>{email}</div>
+                    <div className="profile__title" style={{ marginBottom: '20px',marginLeft:'50px' }}><i className="material-icons">call</i><h3>Phone:</h3>{mobile}</div>
 
                     <div className="profile__detail" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9em', marginBottom: '20px' }}>
-                        <i className="material-icons">person</i>{mobile}
+                  
                     </div>
-
                 </div>
             </div>
         </div>
