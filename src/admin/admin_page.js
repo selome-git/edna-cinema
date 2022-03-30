@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import fire from '../files/firebase';
 
+
 export const Adminpage = () => {
-    const history = useHistory();
-    const location = useLocation();
+    const history = useHistory () ;
+    const location = useLocation () ;
     const profile = location.state.profile;
     const name = location.state.name;
     const email = location.state.email;
     const password = location.state.password;
     const mobile = location.state.mobile;
     const [moviedata, setmoviedata] = useState([]);
-
+    
     useEffect(() => {
         fire.firestore().collection("currentmovies").get().then((snapshot) => {
             snapshot.forEach(doc => {
