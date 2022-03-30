@@ -17,7 +17,7 @@ export const Dashboard = () => {
     const [userbookings, setuserbookings] = useState([]);
 
     useEffect(() => {
-        fire.firestore().collection("Bookings").where("email", "==", email).limit(1).get().then((snapshot) => snapshot.forEach(ele => {
+        fire.firestore().collection("Bookings").where("email", "==", email).get().then((snapshot) => snapshot.forEach(ele => {
             const data = ele.data();
             setuserbookings(arr => [...arr, { data: data }]);
             // console.log(data);
@@ -25,12 +25,12 @@ export const Dashboard = () => {
 
     }, [])
     return (
-        <div className="wrapper ">
+        <div>
             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-            <div className="sidebar" data-color="white" data-background-color="black" data-image="../../public/assets/img/sidebar-1.jpg">
-                <div className="logo"><p className="simple-text logo-normal">
-                    Edna Cinema
-                </p></div>
+            <div className="sidebar" data-color="white" data-background-color="black">
+                <div className="logo"><h2>
+                    Edna Cinema</h2>
+                </div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="nav-item">
@@ -42,15 +42,10 @@ export const Dashboard = () => {
                         <li className="nav-item active">
                             <Link to={{ pathname: "/dashboard", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">dashboard</i>
-                                <p>Dashboard</p>
+                                <p style={{color:'black'}}>Dashboard</p>
                             </Link>
                         </li>
-                        <li className="nav-item ">
-                            <Link to={{ pathname: "/bookings", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
-                                <i className="material-icons">content_paste</i>
-                                <p>Bookings</p>
-                            </Link>
-                        </li>
+                       
                         <li className="nav-item ">
                             <Link to={{ pathname: "/userprofile", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">person</i>
@@ -88,11 +83,13 @@ export const Dashboard = () => {
                     </div>
                 </nav>
                 <div class="content">
+                <h2>All bookings</h2>
                     <div class="container-fluid" id="dashboard">
                         {
+                            
                             userbookings.map((data, index) => {
-                                return <div class="row" key={index}>
-                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                return <div class="row" key={index} style={{maxWidth:'1000px',position:'relative',left:'200px'}}>
+                                    <div class="col-lg-3 col-md-6 col-sm-6" >
                                         <div class="card card-stats">
                                             <div class="card-header card-header-warning card-header-icon">
                                                 <div class="card-icon">
@@ -134,7 +131,7 @@ export const Dashboard = () => {
                                                     <i class="material-icons"><WeekendSharpIcon /></i>
                                                 </div>
                                                 <p class="card-category">Seat Number</p>
-                                                <h3 class="card-title">{data.data.ceatnames}</h3>
+                                                <h3 class="card-title">{data.data.seatnames}</h3>
                                             </div>
                                             <div class="card-footer">
                                                 <div class="stats">
