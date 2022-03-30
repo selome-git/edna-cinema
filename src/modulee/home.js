@@ -28,16 +28,16 @@ export const Homepage = () => {
     return (
         <div className="wrapper " >
             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-            <div className="sidebar" data-color="white" data-background-color="black" data-image="../../public/assets/img/sidebar-1.jpg">
-                <div className="logo"><p className="simple-text logo-normal">
+            <div className="sidebar" data-color="white" data-background-color="black" >
+                <div className="logo"><h2>
                     Edna Cinema
-                </p></div>
+                </h2></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="nav-item active  ">
                             <Link to={{ pathname: "/homepage", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">home</i>
-                                <p>Home</p>
+                                <p style={{color:'black'}}>Home</p>
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -46,12 +46,7 @@ export const Homepage = () => {
                                 <p>Dashboard</p>
                             </Link>
                         </li>
-                        <li className="nav-item ">
-                            <Link to={{ pathname: "/bookings", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
-                                <i className="material-icons">content_paste</i>
-                                <p>Bookings</p>
-                            </Link>
-                        </li>
+                        
                         <li className="nav-item ">
                             <Link to={{ pathname: "/userprofile", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">person</i>
@@ -75,10 +70,10 @@ export const Homepage = () => {
             </div>
             <div className="main-panel">
                 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                    <div class="container-fluid">
+                    <div class="container-fluid" >
                         <div class="navbar-wrapper">
                         </div>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" >
                             <span class="sr-only">Toggle navigation</span>
                             <span class="navbar-toggler-icon icon-bar"></span>
                             <span class="navbar-toggler-icon icon-bar"></span>
@@ -93,19 +88,30 @@ export const Homepage = () => {
                     {
                         moviedata.map((data, index) => {
                             //console.log(data.image);
-                            return <div className="col-4" key={index} style={{ marginLeft: "auto", marginRight: "auto" }}>
-                                <div className="card">
-
-                                    <div className="card-img-top img-fluid">
-                                        <img src={data.data.image} style={{ width: '18rem', height: '20rem' }} />
+                            return <div  style={{ marginLeft: "200px", marginRight: "auto"}}>
+                        <div className="col-4" key={index} style={{maxHeight:'350px'}}>
+                            
+                            <div className="card" style={{backgroundColor:'#222',textDecorationColor:'white' , display:'flex',width:'100%',height:'100%',position:'relative',marginLeft:'40px'}/*sidebar overflow */}>
+                            <h1 style={{color:'#C8B3B3',fontWeight:'lighter',fontFamily:'Segoe UI'}}>{data.data.moviename}</h1>
+                                <div class='moviecard' style={{width:'100%',height:'350px'}}>
+                                    <div class='movieimg'>
+                                <div className="card-img-top img-fluid" style={{backgroundColor: "black",borderRadius:"100px",boxShadow:"0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",width:'100%',height:'200px'}}>
+                                
+                                    <img src={data.data.image} style={{ width:"100%", height:"250px",position:"relative", borderRadius:"70px"}} />
                                     </div>
-                                    <button onClick={() => history.push({ pathname: "/details", state: { viedourl: data.data.viedourl, moviename: data.data.moviename, description: data.data.description, actorname: data.data.actorname, directorname: data.data.directorname, releasedate: data.data.releasedate, outdate: data.data.outdate } })}>View Movie Details</button>
-                                    <button onClick={() => history.push({ pathname: "/bookingform", state: { releasedate: data.data.releasedate, outdate: data.data.outdate, movieimage: data.data.image, moviename: data.data.moviename, ticketcost: data.data.ticketcost, profile: profile, name: name, email: email, password: password, mobile: mobile } })}>Book Now</button>
-
+                                </div> 
+                                <div class='moviedes' >
+                                    <h1>Rating : {data.data.rating}</h1>
+                                <h3 style={{color:'#C8B3B3',height:'250px'}}><u><i>Movies' Description</i></u><br></br>{data.data.description}</h3>
                                 </div>
-                            </div>
-                        })
-
+                                <div class='moviebtn' style={{justifycontent:'center',paddingTop:'60px'}}>
+                                <button style={{borderRadius:'100px',}} onClick={() => history.push({ pathname: "/details" ,state: { viedourl: data.data.viedourl, moviename: data.data.moviename, description: data.data.description, actorname: data.data.actorname, directorname: data.data.directorname, releasedate: data.data.releasedate, outdate: data.data.outdate }  })}>View Trailer</button>
+                                <button style={{borderRadius:'100px'}} onClick={() => history.push({ pathname: "/bookingform", state: { releasedate: data.data.releasedate, outdate: data.data.outdate, movieimage: data.data.image, moviename: data.data.moviename, ticketcost: data.data.ticketcost, profile: profile, name: name, email: email, password: password, mobile: mobile } })}>Get ticket</button>
+                                
+                                <br></br></div>
+                               </div></div>
+                        </div></div>
+                    })
                     }
 
 
