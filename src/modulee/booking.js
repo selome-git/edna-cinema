@@ -24,10 +24,10 @@ export const Booking = () => {
     return (
         <div className="wrapper ">
             <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-            <div className="sidebar" data-color="white" data-background-color="black" data-image="../../assets/img/sidebar-1.jpg">
-                <div className="logo"><p className="simple-text logo-normal">
+            <div className="sidebar" data-color="white" data-background-color="black" >
+                <div className="logo"><h2>
                     Edna Cinema
-                </p></div>
+                </h2></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="nav-item">
@@ -45,7 +45,7 @@ export const Booking = () => {
                         <li className="nav-item active ">
                             <Link to={{ pathname: "/bookings", state: { profile: profile, name: name, email: email, password: password, mobile: mobile } }} className="nav-link">
                                 <i className="material-icons">content_paste</i>
-                                <p>Bookings</p>
+                                <p style={{color:'black'}}>Bookings</p>
                             </Link>
                         </li>
                         <li className="nav-item ">
@@ -104,7 +104,7 @@ export const Booking = () => {
                                                         Movie Name
                                                     </th>
                                                     <th>
-                                                        Seats Available
+                                                        Seats Booked(Seat name)
                                                     </th>
                                                     <th>
                                                         Movie Date
@@ -122,7 +122,7 @@ export const Booking = () => {
                                                                     {data.data.moviename}
                                                                 </td>
                                                                 <td>
-                                                                    {data.data.totalceats}
+                                                                    {data.data.totalseats}({data.data.seatnames})
                                                                 </td>
                                                                 <td>
                                                                     {data.data.bookingdate}
