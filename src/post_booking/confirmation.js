@@ -22,8 +22,13 @@ export const Successresponse = () => {
         print('Edna Cinema', 'booking-pdf');
     }
     const returnHome = () => {
+        if(username==='ticketer')
+        {
+            history.push({ pathname: "/ticketerpage", state: { profile: profile, name: username, email: email, password: password, mobile: mobile } })
+        }
+        else{
         history.push({ pathname: "/homepage", state: { profile: profile, name: username, email: email, password: password, mobile: mobile } })
-    }
+    }}
 
     useEffect(() => {
         // $(".booking-pdf").hide();
