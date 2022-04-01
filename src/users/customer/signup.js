@@ -157,7 +157,6 @@ export const Signup = () => {
   return (
     <div>
      
-      <h3>Edna cinema</h3>
       <div class="container" id="container">
         <div class="form-container sign-up-container">
           <form>
@@ -173,12 +172,12 @@ export const Signup = () => {
         
         <div class="form-container sign-in-container">
           <form>
-            <h1>Sign in</h1>
+          <strong> <h4 style={{fontFamily:'Segoe UI',fontSize:'30px'}}>SIGN IN</h4></strong>
             
            <input type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="Email" />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setpassword(e.target.value)} />
-            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={admin} onChange={(e) => setadmin(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Admin</a>
-            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={ticketer} onChange={(e) => setticketer(true)} /><a href="#" style={{ marginLeft: "-8%", marginTop: "-8%" }}>Pick If You Are Ticketer</a>
+            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={admin} onChange={(e) => setadmin(true)} /><a href="#" style={{ marginLeft: "-49%", marginTop: "-6%",marginBottom:'-1%',fontFamily:'Segoe UI'}}> I am Admin</a>
+            <input type="checkbox" style={{ marginLeft: "-70%", width: "-webkit-fill-available" }} value={ticketer} onChange={(e) => setticketer(true)} /><a href="#" style={{ marginLeft: "-47%", marginTop: "-6%",fontFamily:'Segoe UI' }}> I am Ticketer</a>
             <button onClick={handleLogin}>Sign In</button>
           </form>
         </div>
@@ -186,13 +185,16 @@ export const Signup = () => {
           <div class="overlay">
             <div class="overlay-panel overlay-left">
               <h1>Welcome Back!</h1>
-              <p>To stay connected with us please login with your personal info</p>
+              <p>To stay connected with us please login</p>
               <button class="ghost" id="signIn" onClick={signIn}>Sign In</button>
             </div>
+            
             <div class="overlay-panel overlay-right">
-              <h1>Welcome :)</h1>
+              
+              <h1 class="II">Welcome To <br></br></h1><h2>EDNA CINEMA :)</h2>
               <p>Enter your personal details and be part of Edna Cinema</p>
               <button class="ghost" id="signUp" onClick={signUp}>Sign Up</button>
+
             </div>
           </div>
         </div>
