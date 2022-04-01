@@ -92,7 +92,7 @@ export const Homepage = () => {
                         <div className="col-4" key={index} style={{maxHeight:'350px'}}>
                             
                             <div className="card" style={{backgroundColor:'#222',textDecorationColor:'white' , display:'flex',width:'100%',height:'100%',position:'relative',marginLeft:'40px'}/*sidebar overflow */}>
-                            <h1 style={{color:'#C8B3B3',fontWeight:'lighter',fontFamily:'Segoe UI'}}>{data.data.moviename}</h1>
+                            <h1 style={{color:'#fff',fontWeight:'lighter',fontFamily:'Segoe UI'}}>{data.data.moviename}</h1>
                                 <div class='moviecard' style={{width:'100%',height:'350px'}}>
                                     <div class='movieimg'>
                                 <div className="card-img-top img-fluid" style={{backgroundColor: "black",borderRadius:"100px",boxShadow:"0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",width:'100%',height:'200px'}}>
@@ -101,8 +101,9 @@ export const Homepage = () => {
                                     </div>
                                 </div> 
                                 <div class='moviedes' >
-                                    <h1>Rating : {data.data.rating}</h1>
-                                <h3 style={{color:'#C8B3B3',height:'250px'}}><u><i>Movies' Description</i></u><br></br>{data.data.description}</h3>
+                                <h3 style={{color:'#fff',height:'250px',fontSize:'35px',fontFamily:'Segoe UI'}}><u><strong><i>Movies' Description</i></strong></u><br></br>{data.data.description}</h3>
+                                    <h1 style={{fontSize:'20px',fontFamily:'Segoe UI'}}>Rating : {data.data.rating}</h1>
+    
                                 </div>
                                 <div class='moviebtn' style={{justifycontent:'center',paddingTop:'60px'}}>
                                 <button style={{borderRadius:'100px',}} onClick={() => history.push({ pathname: "/details" ,state: { viedourl: data.data.viedourl, moviename: data.data.moviename, description: data.data.description, actorname: data.data.actorname, directorname: data.data.directorname, releasedate: data.data.releasedate, outdate: data.data.outdate }  })}>View Trailer</button>
