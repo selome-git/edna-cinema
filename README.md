@@ -1,1 +1,1 @@
-# EdnaCinema wesite developed using react.js,node.js,firebase, Enjoy:)
+# EdnaCinema website developed using react.js,node.js,firebase, Enjoy:)
